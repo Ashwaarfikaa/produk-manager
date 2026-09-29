@@ -26,14 +26,3 @@ Buka Web:
 Akses link ini di browser:
 http://localhost/SummitGear_Outdoor/public/
 
-3. Cara Push / Upload ke GitHub (Jika Ada Perubahan)
-Buka PowerShell di folder project kamu, lalu jalankan 3 perintah ini:
-Bash
-git add .
-git commit -m "perbarui aplikasi toko outdoor"
-git push -u origin main
-(Jika minta akses/error 403 lagi, jalankan perintah ini dengan token GitHub kamu):
-
-Bash
-git remote set-url origin https://TOKEN_GITHUB_KAMU@github.com/Ashwaarfikaa/produk-manager.git
-git push -u origin main
