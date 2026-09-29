@@ -1,0 +1,19 @@
+CREATE DATABASE IF NOT EXISTS store_db;
+USE store_db;
+
+CREATE TABLE IF NOT EXISTS products (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL UNIQUE,
+    category VARCHAR(50) NOT NULL DEFAULT 'Umum',
+    price DECIMAL(12,2) NOT NULL,
+    stock INT NOT NULL DEFAULT 0,
+    image_url VARCHAR(255) NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Opsional: Contoh data awal jika belum ada
+INSERT INTO products (name, category, price, stock, image_url) VALUES
+('Tenda Dome Eiger 4 Person', 'Tenda & Shelter', 1250000.00, 10, ''),
+('Carrier Deuter Aircontact 60L', 'Tas & Carrier', 2450000.00, 5, ''),
+('Sepatu Gunung Eiger Waterproof', 'Alat Alas Kaki', 890000.00, 8, '')
+ON DUPLICATE KEY UPDATE id=id;
